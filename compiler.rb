@@ -16,7 +16,7 @@ module RDiki
     end
 
     def enqueue(names)
-      names.each{|n| @queue << n }
+      @queue += names
     end
 
     def rd_prefix(prefix)

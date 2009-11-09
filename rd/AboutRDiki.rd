@@ -1,47 +1,47 @@
 
 = RDiki
 
-RDoc �ŏ��� Wiki ���ǂ��BWiki ����Ȃ��̂� RdWiki! �ɂ͂��Ȃ��B
+RDoc で書く Wiki もどき。Wiki じゃないので RdWiki! にはしない。
 
-== ���ǂ��ȂƂ���
+== もどきなところ
 
-* �u���E�U����X�V�ł��Ȃ�
-  * �u���E�U����͌��邾���B
-* �s�x rd.rb �𑖂点�Ȃ��Ƃ����Ȃ�
-  * �߂�ǂ���
-* �������c���Ȃ�
-* ���b�N�Ƃ����ɂ����Ȃ�
-* HTML ������
-* �e���v���Ƃ��X�^�C���Ƃ����ɂ��Ȃ�
-* ���������܂ŏz�Q�Ƃ����疳�����[�v���Ă�
-* �x��
-  * ������o�b�`����
+* ブラウザから更新できない
+  * ブラウザからは見るだけ。
+* 都度 rd.rb を走らせないといけない
+  * めんどくさ
+* 履歴を残さない
+* ロックとか何にもしない
+* HTML が汚い
+* テンプレとかスタイルとか何にもなし
+* ついさっきまで循環参照したら無限ループしてた
+* 遅い
+  * だからバッチ処理
 
-== �݌v�H
+== 設計？
 
-* �\���� FrontPage.
-* WikiName! �͏���ɒǂ������ăR���p�C�����ă����N����B
+* 表紙は FrontPage.
+* WikiName! は勝手に追いかけてコンパイルしてリンクする。
 
-== �L�@
+== 記法
 
-�ق� RDoc �� SimpleMarkup! ���̂܂܁B
+ほぼ RDoc の SimpleMarkup! そのまま。
 
 *boldface* _emphasize_ +code+
 
-<b>�{�[���h</b> <em>����</em> <tt>�R�[�h</tt>
+<b>ボールド</b> <em>強調</em> <tt>コード</tt>
 
-WikiName �͏���Ƀ����N�����BWikiName.rd ���Ȃ��ƃR���p�C�����ɕ���������B
-[!wiki:NONWIKINAME] �Ƃ���Ζ�����胊���N���悤�Ƃ���B
-bracket �ɂ�郊���N�ɂ̓L���v�V������������B[wiki:FrontPage �\��]
+WikiName は勝手にリンクされる。WikiName.rd がないとコンパイル時に文句を言う。
+[!wiki:NONWIKINAME] とすれば無理やりリンクしようとする。
+bracket によるリンクにはキャプションをつけられる。[wiki:FrontPage 表紙]
 
-����ɃR���p�C���������N���ꂽ���Ȃ���� WikiName!! �Ə����B
+勝手にコンパイル＆リンクされたくなければ WikiName!! と書く。
 
-http://www.autch.net/�ʂ�� mailto:autch@autch.net ftp://ftp.riken.jp/
+http://www.autch.net/ぬるぽ mailto:autch@autch.net ftp://ftp.riken.jp/
 
-�����N�̒�����F[http://www.autch.net], [!http://www.autch.net/ Autch.net]
+リンクの張り方：[http://www.autch.net], [!http://www.autch.net/ Autch.net]
 
-[!wiki:FrontPage] �s���� bracket link �� definition list �����Ԃ�񂾂�
-�ǂǂ����悤�H
+[!wiki:FrontPage] 行頭の bracket link と definition list がかぶるんだけ
+どどうしよう？
 
 [a word]  definition
 [wiki:foo] definition of foo
